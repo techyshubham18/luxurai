@@ -1,0 +1,164 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body,
+#root{
+  width:100%;
+  height:100%;
+  overflow-x:hidden;
+  font-family:Inter,sans-serif;
+  background:black;
+}
+
+.hero{
+  position:relative;
+  width:100%;
+  height:300vh;
+  overflow:hidden;
+  background:black;
+}
+
+.mesh-bg{
+  position:fixed;
+  inset:0;
+  background:
+  radial-gradient(circle at 20% 20%, rgba(0,255,200,0.18), transparent 30%),
+  radial-gradient(circle at 80% 40%, rgba(0,150,255,0.16), transparent 35%),
+  radial-gradient(circle at 50% 80%, rgba(140,0,255,0.18), transparent 30%),
+  black;
+  filter:blur(30px);
+  animation:meshMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes meshMove{
+  0%{
+    transform:scale(1) translateY(0px);
+  }
+
+  100%{
+    transform:scale(1.2) translateY(-50px);
+  }
+}
+
+.logo-container{
+  position:fixed;
+  top:22%;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.flute{
+  width:520px;
+  height:16px;
+  border-radius:999px;
+  background:linear-gradient(
+    90deg,
+    #7a4b1f,
+    #c79853,
+    #e4bc77,
+    #7a4b1f
+  );
+  box-shadow:
+  0 0 40px rgba(255,215,120,0.4),
+  inset 0 0 10px rgba(255,255,255,0.4);
+  margin-bottom:20px;
+}
+
+.luxur-logo{
+  font-size:7rem;
+  letter-spacing:0.25em;
+  color:white;
+  font-weight:800;
+  text-align:center;
+  text-shadow:
+  0 0 30px rgba(255,255,255,0.2),
+  0 0 80px rgba(0,255,255,0.15);
+}
+
+.feather-wrapper{
+  position:fixed;
+  right:12%;
+  top:28%;
+  z-index:4;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:30px;
+}
+
+.feather{
+  width:180px;
+  height:420px;
+  border-radius:50%;
+  background:
+  radial-gradient(circle at 50% 25%, #00ffff, transparent 20%),
+  radial-gradient(circle at 50% 32%, #0011ff, transparent 14%),
+  linear-gradient(
+    180deg,
+    #0aff99,
+    #00ccff,
+    #7f00ff
+  );
+  clip-path:polygon(
+    50% 0%,
+    65% 10%,
+    80% 30%,
+    100% 70%,
+    60% 100%,
+    40% 100%,
+    0% 70%,
+    20% 30%,
+    35% 10%
+  );
+  filter:
+  drop-shadow(0 0 40px rgba(0,255,255,0.35));
+  opacity:0.95;
+}
+
+.glass-btn{
+  padding:18px 42px;
+  border:none;
+  border-radius:999px;
+  background:rgba(255,255,255,0.08);
+  color:white;
+  font-size:1rem;
+  backdrop-filter:blur(20px);
+  box-shadow:
+  0 0 30px rgba(255,255,255,0.12),
+  inset 0 0 10px rgba(255,255,255,0.08);
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.glass-btn:hover{
+  transform:translateY(-2px);
+}
+
+@media(max-width:768px){
+
+  .luxur-logo{
+    font-size:3rem;
+    letter-spacing:0.12em;
+  }
+
+  .flute{
+    width:280px;
+  }
+
+  .feather{
+    width:120px;
+    height:260px;
+  }
+
+  .feather-wrapper{
+    right:2%;
+  }
+}
